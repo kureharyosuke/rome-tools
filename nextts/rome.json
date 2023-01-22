@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/rome/configuration_schema.json",
+  "files": {
+    "ignore": ["website/build", "dist", "target", ".next"]
+  },
   "formatter": {
     "enabled": true,
     "formatWithErrors": true,
@@ -7,11 +10,6 @@
     "indentSize": 2,
     "lineWidth": 120,
     "ignore": []
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "single"
-    }
   },
   "linter": {
     "enabled": true,
