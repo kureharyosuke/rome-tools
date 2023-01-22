@@ -11,6 +11,11 @@
     "lineWidth": 120,
     "ignore": []
   },
+  "javascript": {
+    "formatter": {
+      "semicolons": "asNeeded"
+    }
+  },
   "linter": {
     "enabled": true,
     "rules": {

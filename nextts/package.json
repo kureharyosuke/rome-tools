@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "rome": "rome check . && rome format ."
+    "rome": "rome check . && rome format .",
+    "format:fix": "rome format . --write"
   },
   "dependencies": {
     "@next/font": "13.1.4",
