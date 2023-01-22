@@ -6,7 +6,12 @@
     "indentStyle": "tab",
     "indentSize": 2,
     "lineWidth": 120,
-    "ignore": []
+    "ignore": ["./node_modules/**/*.", "./pnpm-lock.yaml", "./next.config.js", "./jsconfig.json"]
+  },
+  "javascript": {
+    "formatter": {
+      "semicolons": "asNeeded"
+    }
   },
   "linter": {
     "enabled": true,

@@ -6,9 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "rome:format": "rome format .",
-    "rome:check": "rome check ."
+    "format": "rome format .",
+    "format:fix": "rome format . --write",
+    "check": "rome check ."
   },
   "dependencies": {
     "@next/font": "13.1.4",
