@@ -1,20 +1,29 @@
 {
-  "$schema": "./node_modules/rome/configuration_schema.json",
+  "$schema": "./node_modules/rome/configuration_schema.json", //  <= JSON 스키마 파일에 경로를 전달
+  "files": {
+    "ignore": ["./node_modules", ".pubic"]
+  },
+  // ------------- <Formatter> -------------　//
   "formatter": {
     "enabled": true,
     "formatWithErrors": true,
     "indentStyle": "tab",
     "indentSize": 2,
-    "lineWidth": 120,
+    "lineWidth": 120, //*
     "ignore": ["./node_modules/**/*.", "./pnpm-lock.yaml", "./next.config.js", "./jsconfig.json"]
   },
+  // javascript or typescript file set
   "javascript": {
     "formatter": {
-      "semicolons": "asNeeded"
+      "quoteStyle": "double", // [Default/基本値]: double  ["single", "double"]
+      "trailingComma": "all", // ["all", ]
+      "semicolons": "asNeeded" //
     }
   },
+   // ------------- </Formatter> -------------　//
+   // ------------- <Linter> -------------　//
   "linter": {
-    "enabled": true,
+    "enabled": true, // * boolean ["]
     "rules": {
       "recommended": true,
       "style": {
@@ -24,4 +33,12 @@
       }
     }
   }
+  // ------------- </Linter> -------------　//
+  // ------------- <Compiler 2023.03> -------------　//
+  // ------------- </Compiler 2023.03> -------------　//
+  // ------------- <Bundler (2023.03)> -------------　//
+  // ------------- </Bundler (2023.03)> -------------　//
+  // ------------- <Testing (2023.06)> -------------　//
+  // ------------- </Testing (2023.06)> -------------　//
+
 }
