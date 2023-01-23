@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "rome": "rome check . && rome format .",
+    "check": "rome check .",
+    "format": "rome format .",
     "format:fix": "rome format . --write"
   },
   "dependencies": {
