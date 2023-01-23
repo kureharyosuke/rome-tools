@@ -18,7 +18,7 @@
       "quoteStyle": "double", // * <DEFAULT/基本値 : "double"> string ["single"|"double"] => 문자열 리터럴을 나타낼 때 사용되는 따옴표 유형
       "quoteProperties": "asNeeded", // * <DEFAULT/基本値 : "asNeeded"> string ["asNeeded"|"preserve"] => 개체 내부의 속성을 인용해야 하는 경우
       "trailingComma": "all", // * <DEFAULT/基本値 : "all"> string ["all"|"es5"|"none"] => 후행 쉼표는 항상 추가 | 후행 쉼표는 이전 버전의 JavaScript에서 지원하는 위치에만 추가 | 후행 쉼표는 추가되지 않음
-      "semicolons": "asNeeded" // * <DEFAULT/基本値 : "all"> string ["always"|"asNeeded"] => 세미콜론은 항상 각 문의 끝에 추가 | 세미콜론은 ASI 로부터 보호하기 위해 필요한 위치에만 추가
+      "semicolons": "asNeeded" // * <DEFAULT/基本値 : "always"> string ["always"|"asNeeded"] => 세미콜론은 항상 각 문의 끝에 추가 | 세미콜론은 ASI 로부터 보호하기 위해 필요한 위치에만 추가
     }
   },
    // ------------- </Formatter> -------------　//
