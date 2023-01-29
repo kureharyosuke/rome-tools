@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "check": "rome check .",
+    "check:fix": "rome check . --apply",
     "format": "rome format .",
     "format:fix": "rome format . --write"
   },

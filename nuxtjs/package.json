@@ -5,7 +5,11 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "format": "rome format .",
+    "format:fix": "rome format . --write",
+    "lint": "rome check .",
+    "lint:fix": "rome check . --apply"
   },
   "devDependencies": {
     "nuxt": "^3.0.0",

@@ -8,7 +8,8 @@
     "start": "next start",
     "format": "rome format .",
     "format:fix": "rome format . --write",
-    "check": "rome check ."
+    "lint": "rome check .",
+    "lint:fix": "rome check . --apply"
   },
   "dependencies": {
     "@next/font": "13.1.4",
