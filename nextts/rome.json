@@ -64,7 +64,6 @@
         "noImplicitBoolean": "warn",
         "noNegationElse": "error",
         "noShoutyConstants": "off",
-        "noUnusedTemplateLiteral": "off",
         "useBlockStatements": "error",
         "useFragmentSyntax": "off",
         "useSelfClosingElements": "warn",
