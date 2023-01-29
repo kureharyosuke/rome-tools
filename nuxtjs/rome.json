@@ -1,17 +1,75 @@
 {
-  "$schema": "./node_modules/rome/configuration_schema.json",
-  "formatter": {
-    "enabled": true,
-    "formatWithErrors": false,
-    "indentStyle": "tab",
-    "indentSize": 2,
-    "lineWidth": 80,
-    "ignore": []
+  "$schema": "./node_modules/rome/configuration_schema.json", //  <= JSON 스키마 파일에 경로를 전달
+  "files": {
+    "ignore": ["./node_modules", ".pubic"]
   },
+  // ------------- <Formatter> -------------　//
+  "formatter": {
+    "enabled": true, // * <DEFAULT/基本値 : true> boolean => formatter 활성화 설정
+    "formatWithErrors": true, // * <DEFAULT/基本値 : false> boolean => 구문 오류가 있는 문서의 서식을 지정
+    "indentStyle": "tab", // * <DEFAULT/基本値 : tab>  string ["tab"|"space"] => 들여쓰기 스타일
+    "indentSize": 2, // * <DEFAULT/基本値 : 2> number => 들여쓰기의 크기
+    "lineWidth": 120, //* <DEFAULT/基本値 : 80> number => 한 줄에 쓸 수 있는 문자 수
+    "ignore": ["./node_modules/**/*.", "./pnpm-lock.yaml", "./next.config.js", "./jsconfig.json"]
+  },
+  // javascript and typescript file set
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double", // * <DEFAULT/基本値 : "double"> string ["single"|"double"] => 문자열 리터럴을 나타낼 때 사용되는 따옴표 유형
+      "quoteProperties": "asNeeded", // * <DEFAULT/基本値 : "asNeeded"> string ["asNeeded"|"preserve"] => 개체 내부의 속성을 인용해야 하는 경우
+      "trailingComma": "all", // * <DEFAULT/基本値 : "all"> string ["all"|"es5"|"none"] => 후행 쉼표는 항상 추가 | 후행 쉼표는 이전 버전의 JavaScript에서 지원하는 위치에만 추가 | 후행 쉼표는 추가되지 않음
+      "semicolons": "asNeeded" // * <DEFAULT/基本値 : "always"> string ["always"|"asNeeded"] => 세미콜론은 항상 각 문의 끝에 추가 | 세미콜론은 ASI 로부터 보호하기 위해 필요한 위치에만 추가
+    }
+  },
+   // ------------- </Formatter> -------------　//
+   // ------------- <Linter> -------------　//
   "linter": {
-    "enabled": true,
+    "enabled": true, // * boolean ["]
     "rules": {
-      "recommended": true
+      "recommended": true,
+      // Accessibility
+      "a11y": {
+        "noBlankTarget":"error"
+      },
+      // Complexity
+      "complexity": {
+        "useSimplifiedLogicExpression":"warn"
+      },
+      // Correctness
+      "correctness": {
+        "noConstAssign": "error",
+        "useValidForDirection":"warn"
+      },
+      // Performance
+      "performance": {
+        "noDelete": "warn"
+      },
+      // Security
+      "security": {}
+      ,
+      // Style
+      "style": {
+        "useBlockStatements": "error",
+        "useShorthandArrayType": "error",
+        "noShoutyConstants": "warn"
+      },
+      // Suspicious
+      "suspicious": {
+        "noDoubleEquals":"error",
+        "noExplicitAny": "warn"
+      },
+      // Nursery
+      "nursery":{
+      }
     }
   }
+  // ------------- </Linter> -------------　//
+
+  // ------------- <Compiler 2023.03> -------------　//
+  // ------------- </Compiler 2023.03> -------------　//
+  // ------------- <Bundler (2023.03)> -------------　//
+  // ------------- </Bundler (2023.03)> -------------　//
+  // ------------- <Testing (2023.06)> -------------　//
+  // ------------- </Testing (2023.06)> -------------　//
 }
+

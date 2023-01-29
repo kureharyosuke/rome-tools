@@ -7,7 +7,7 @@
   "formatter": {
     "enabled": true, // * <DEFAULT/基本値 : true> boolean => formatter 활성화 설정
     "formatWithErrors": true, // * <DEFAULT/基本値 : false> boolean => 구문 오류가 있는 문서의 서식을 지정
-    "indentStyle": "tab", // * <DEFAULT/基本値 : tab>  string ["tab"|"space"] => 들여쓰기 스타일
+    "indentStyle": "space", // * <DEFAULT/基本値 : tab>  string ["tab"|"space"] => 들여쓰기 스타일
     "indentSize": 2, // * <DEFAULT/基本値 : 2> number => 들여쓰기의 크기
     "lineWidth": 120, //* <DEFAULT/基本値 : 80> number => 한 줄에 쓸 수 있는 문자 수
     "ignore": ["./node_modules/**/*.", "./pnpm-lock.yaml", "./next.config.js", "./jsconfig.json"]
@@ -26,45 +26,145 @@
   "linter": {
     "enabled": true, // * boolean ["]
     "rules": {
-      "recommended": true,
       // Accessibility
       "a11y": {
-        "noBlankTarget":"error"
+        "noAutofocus": "error",
+        "noBlankTarget":"error",
+        "noPositiveTabindex": "off",
+        "useAltText": "off",
+        "useAnchorContent": "off",
+        "useButtonType": "error",
+        "useHtmlLang": "off",
+        "useKeyWithClickEvents": "error",
+        "useKeyWithMouseEvents": "error",
+        "useValidAnchor": "error"
       },
       // Complexity
       "complexity": {
-        "useSimplifiedLogicExpression":"warn"
+        "noExtraBooleanCast": "error",
+        "noMultipleSpacesInRegularExpressionLiterals": "error",
+        "noUselessFragments": "off",
+        "useFlatMap": "error",
+        "useOptionalChain":  "error",
+        "useSimplifiedLogicExpression": "error"
       },
       // Correctness
       "correctness": {
-        "noConstAssign": "error",
-        "useValidForDirection":"warn"
+        "noChildrenProp": "error",
+        "noConstAssign": "warn",
+        "noEmptyPattern": "off",
+        "noNewSymbol": "off",
+        "noRenderReturnValue": "off",
+        "noUndeclaredVariables": "warn",
+        "noUnnecessaryContinue": "error",
+        "noUnreachable": "warn",
+        "noUnusedVariables": "error",
+        "noVoidElementsWithChildren": "error",
+        "useValidForDirection": "error"
       },
       // Performance
       "performance": {
         "noDelete": "warn"
       },
       // Security
-      "security": {}
+      "security": {
+        "noDangerouslySetInnerHtml": "off",
+        "noDangerouslySetInnerHtmlWithChildren": "off"
+      }
       ,
       // Style
       "style": {
+        "noArguments": "off",
+        "noImplicitBoolean": "warn",
+        "noNegationElse": "error",
+        "noShoutyConstants": "off",
+        "noUnusedTemplateLiteral": "off",
         "useBlockStatements": "error",
+        "useFragmentSyntax": "off",
+        "useSelfClosingElements": "warn",
         "useShorthandArrayType": "error",
-        "noShoutyConstants": "warn"
+        "useSingleCaseStatement": "off",
+        "useSingleVarDeclarator": "warn",
+        "useTemplate": "warn",
+        "useWhile": "warn"
       },
       // Suspicious
       "suspicious": {
-        "noDoubleEquals":"error",
-        "noExplicitAny": "warn"
+        "noArrayIndexKey": "warn",
+        "noAsyncPromiseExecutor": "off",
+        "noCatchAssign": "warn",
+        "noCommentText": "error",
+        "noCompareNegZero": "error",
+        "noDebugger": "error",
+        "noDoubleEquals":"warn",
+        "noDuplicateParameters": "error",
+        "noExplicitAny": "warn",
+        "noFunctionAssign": "error",
+        "noImportAssign": "error",
+        "noLabelVar": "warn",
+        "noShadowRestrictedNames": "warn",
+        "noSparseArray":"warn",
+        "noUnsafeNegation":"error",
+        "useValidTypeof": "warn"
       },
       // Nursery
       "nursery":{
+        "noAccessKey": "off",
+        "noAssignInExpressions": "off",
+        "noBannedTypes": "off",
+        "noClassAssign": "off",
+        "noCommaOperator": "off",
+        "noConstEnum": "off",
+        "noConstructorReturn": "off",
+        "noDistractingElements": "off",
+        "noDuplicateCase": "off",
+        "noDuplicateJsxProps": "off",
+        "noDuplicateObjectKeys": "off",
+        "noEmptyInterface": "off",
+        "noExtraNonNullAssertion": "off",
+        "noExtraSemicolons": "off",
+        "noGlobalObjectCalls": "off",
+        "noHeaderScope": "off",
+        "noInnerDeclarations": "off",
+        "noInvalidConstructorSuper": "off",
+        "noNonNullAssertion": "off",
+        "noNoninteractiveElementToInteractiveRole": "off",
+        "noPrecisionLoss": "off",
+        "noPrototypeBuiltins": "off",
+        "noRedundantAlt": "off",
+        "noRedundantUseStrict": "off",
+        "noRestrictedGlobals": "off",
+        "noSelfCompare": "off",
+        "noSetterReturn": "off",
+        "noStringCaseMismatch": "off",
+        "noUnreachableSuper": "off",
+        "noUnsafeFinally": "off",
+        "noUnusedLabels": "off",
+        "noUselessSwitchCase": "off",
+        "noVar": "off",
+        "noVoidTypeReturn": "off",
+        "noWith": "off",
+        "useAriaPropTypes": "off",
+        "useAriaPropsForRole": "off",
+        "useCamelCase": "off",
+        "useConst": "off",
+        "useDefaultParameterLast": "off",
+        "useDefaultSwitchClauseLast": "off",
+        "useEnumInitializers": "off",
+        "useExhaustiveDependencies": "off",
+        "useExponentiationOperator": "off",
+        "useHookAtTopLevel": "off",
+        "useIframeTitle": "off",
+        "useIsNan": "off",
+        "useMediaCaption": "off",
+        "useNumericLiterals": "off",
+        "useValidAriaProps": "off",
+        "useValidLang": "off",
+        "useYield": "off"
       }
     }
   }
   // ------------- </Linter> -------------　//
-
   // ------------- <Compiler 2023.03> -------------　//
   // ------------- </Compiler 2023.03> -------------　//
   // ------------- <Bundler (2023.03)> -------------　//
