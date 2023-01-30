@@ -52,23 +52,38 @@ const FormChecker: React.FC = () => {
 			<form ref={formRef}>
 				<label>
 					Name:
-					<input type="text" name="name" onChange={handleChange} required />
+					<input
+						type="text"
+						name="name"
+						onChange={handleChange}
+						required={true}
+					/>
 				</label>
 				<br />
 				<label>
 					Email:
-					<input type="email" name="email" onChange={handleChange} required />
+					<input
+						type="email"
+						name="email"
+						onChange={handleChange}
+						required={true}
+					/>
 				</label>
 				<br />
 				<label>
 					Age:
-					<input type="number" name="age" onChange={handleChange} required />
+					<input
+						type="number"
+						name="age"
+						onChange={handleChange}
+						required={true}
+					/>
 				</label>
 				<br />
 				<label>
 					Gender:
-					<select name="gender" onChange={handleChange} required>
-						<option value="" disabled selected>
+					<select name="gender" onChange={handleChange} required={true}>
+						<option value="" disabled={true} selected={true}>
 							Select your option
 						</option>
 						<option value="male">Male</option>
