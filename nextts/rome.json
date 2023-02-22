@@ -1,16 +1,14 @@
 {
-  "formatter": {
-    "enabled": true,
-    "formatWithErrors": true,
-    "indentStyle": "space",
-    "indentSize": 2,
-    "lineWidth": 120,
-    "ignore": ["./.next"]
-  },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+       "suspicious": {
+        "noCommentText": "warn"
+      },
+      "nursery": {
+        "useExhaustiveDependencies": "error"
+      }
     }
   }
 }

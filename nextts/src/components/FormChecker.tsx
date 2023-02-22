@@ -36,7 +36,7 @@ const FormChecker: React.FC = () => {
     setValidCount(validCount);
     setInvalidCount(invalidCount);
     setPercentValid(Math.round((validCount / (validCount + invalidCount)) * 100));
-  }, [formData]);
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
