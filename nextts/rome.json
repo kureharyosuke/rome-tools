@@ -3,11 +3,8 @@
     "enabled": true,
     "rules": {
       "recommended": true,
-       "suspicious": {
-        "noCommentText": "warn"
-      },
       "nursery": {
-        "useExhaustiveDependencies": "error"
+        "useExhaustiveDependencies": "warn"
       }
     }
   }
