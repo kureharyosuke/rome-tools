@@ -22,7 +22,7 @@ export const useFormValidation = (initialState: FormState) => {
 			return acc;
 		}, 0);
 		setFormState({ ...formState, errors });
-	}, [formState]);
+	}, []);
 
 	const handleChange = (
 		event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
@@ -98,3 +98,51 @@ export const useFormValidation = (initialState: FormState) => {
 // };
 
 // export default useFormValidation;
+
+/**
+ *
+ */
+./src/hooks/useFormValidation.ts:17:2 lint/nursery/useExhaustiveDependencies ━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✖ This hook do not specify all of its dependencies.
+
+    15 │        const [formState, setFormState] = useState(initialState);
+    16 │
+  > 17 │        useEffect(() => {
+       │        ^^^^^^^^^
+    18 │                const errors = formState.inputFields.reduce((acc, field) => {
+    19 │                        if (!field.isValid) {
+
+  ℹ This dependency is not specified in the hook dependency list.
+
+    22 │                        return acc;
+    23 │                }, 0);
+  > 24 │                setFormState({ ...formState, errors });
+       │                                  ^^^^^^^^^
+    25 │        }, []);
+    26 │
+
+
+// ./src/hooks/useFormValidation.ts:17:2 lint/nursery/useExhaustiveDependencies ━━━━━━━━━━━━━━━━━━━━━━━
+
+//   ✖ This hook do not specify all of its dependencies.
+
+//     15 │        const [formState, setFormState] = useState(initialState);
+//     16 │
+//   > 17 │        useEffect(() => {
+//        │        ^^^^^^^^^
+//     18 │                const errors = formState.inputFields.reduce((acc, field) => {
+//     19 │                        if (!field.isValid) {
+
+//   ℹ This dependency is not specified in the hook dependency list.
+
+//     17 │        useEffect(() => {
+//   > 18 │                const errors = formState.inputFields.reduce((acc, field) => {
+//        │                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//     19 │                        if (!field.isValid) {
+//     20 │                                acc++;
+
+
+// Checked 12 file(s) in 2ms
+// Found 3 error(s)
+// Error: some errors were emitted while running checks
