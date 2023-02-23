@@ -1,44 +1,46 @@
 import { useState, useEffect } from "react";
 
 export interface InputField {
-  name: string;
-  value: string;
-  isValid: boolean;
+	name: string;
+	value: string;
+	isValid: boolean;
 }
 
 export interface FormState {
-  inputFields: InputField[];
-  errors: number;
+	inputFields: InputField[];
+	errors: number;
 }
 
 export const useFormValidation = (initialState: FormState) => {
-  const [formState, setFormState] = useState(initialState);
+	const [formState, setFormState] = useState(initialState);
 
-  useEffect(() => {
-    const errors = formState.inputFields.reduce((acc, field) => {
-      if (!field.isValid) {
-        acc++;
-      }
-      return acc;
-    }, 0);
-    setFormState({ ...formState, errors });
-  }, [formState.inputFields]);
+	useEffect(() => {
+		const errors = formState.inputFields.reduce((acc, field) => {
+			if (!field.isValid) {
+				acc++;
+			}
+			return acc;
+		}, 0);
+		setFormState({ ...formState, errors });
+	}, [formState]);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const inputFields = formState.inputFields.map((field) => {
-      if (field.name === event.target.name) {
-        return {
-          ...field,
-          value: event.target.value,
-          isValid: event.target.checkValidity(),
-        };
-      }
-      return field;
-    });
-    setFormState({ ...formState, inputFields });
-  };
+	const handleChange = (
+		event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+	) => {
+		const inputFields = formState.inputFields.map((field) => {
+			if (field.name === event.target.name) {
+				return {
+					...field,
+					value: event.target.value,
+					isValid: event.target.checkValidity(),
+				};
+			}
+			return field;
+		});
+		setFormState({ ...formState, inputFields });
+	};
 
-  return { formState, handleChange };
+	return { formState, handleChange };
 };
 
 // import { useState, useEffect } from "react";

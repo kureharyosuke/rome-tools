@@ -1,10 +1,14 @@
 {
+  "$schema": "./node_modules/rome/configuration_schema.json",
+  "files": {
+    "ignore": ["./node_modules", ".pubic", "./.next"]
+  },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true,
       "nursery": {
-        "useExhaustiveDependencies": "warn"
+        "useExhaustiveDependencies": "error"
       }
     }
   }
